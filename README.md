@@ -5,19 +5,19 @@ A rapid merchant onboarding system that replaced legacy call-center and paper pr
 ---
 
 ## 📌 Table of Contents
-- [Overview](#overview)
-- [Problem](#problem)
-- [Solution](#solution)
-- [Technologies Used](#technologies-used)
-- [Architecture](#architecture)
-- [Key Features](#key-features)
-- [Key Outcomes](#key-outcomes)
-- [Timeline](#timeline)
-- [Impact](#impact)
-- [My Role](#my-role)
-- [Lessons Learned](#lessons-learned)
-- [License](#license)
-- [References](#references)
+- [🧠 Overview](#-overview)
+- [❗ Problem](#-problem)
+- [💡 Solution](#-solution)
+- [🛠️ Technologies Used](#-technologies-used)
+- [🏗️ Architecture](#-architecture)
+- [🌟 Key Features](#-key-features)
+- [📈 Key Outcomes](#-key-outcomes)
+- [⏳ Timeline](#-timeline)
+- [🌍 Impact](#-impact)
+- [👤 My Role](#-my-role)
+- [🧠 Lessons Learned](#-lessons-learned)
+- [📄 License](#-license)
+- [📚 References](#-references)
 
 ---
 
@@ -54,27 +54,47 @@ We designed an end-to-end onboarding automation toolkit that allowed internal sa
 
 ## 🛠️ Technologies Used
 
-- Node.js – Core backend logic and service orchestration
-- PostgreSQL – Merchant data and SKU catalog store
-- Docker – Containerized for dev/staging/production parity
-- QR SDK – Dynamic QR code generation and routing
-- Salesforce API – Weekly bi-directional CRM sync
+- **Node.js** – Core backend logic and service orchestration  
+- **PostgreSQL** – Merchant data and SKU catalog store  
+- **Docker** – Containerized for dev/staging/production parity  
+- **QR SDK** – Dynamic QR code generation and routing  
+- **Salesforce API** – Weekly bi-directional CRM sync
 
 ---
 
 ## 🏗️ Architecture
++———————–+
+| Sales Agent QR Scan  |
++–––––+————+
+|
+v
++———————–+
+| Node.js Microservice |
++–––––+————+
+|
+v
++—————————––+
+| Load/Generate Merchant Menu  |
++———–+—————––+
+|
++——+——+
+| PostgreSQL  |
++———––+
+|
+v
++—————————––+
+| Instant Registration Trigger |
++—————————––+
+|
+v
++————————+
+| Salesforce Sync (2-Way)|
++————————+
 
-[ Sales Agent QR Scan ]
-        ↓
-[ Node.js Microservice ]
-        ↓
-[ Load/Generate Merchant Menu ] ←→ [ PostgreSQL ]
-        ↓
-[ Instant Internal Registration Trigger ]
-        ↓
-[ Salesforce Sync (Bi-Directional) ]
+---
 
 ## 🌟 Key Features
+
 - 📦 **Auto-filled Menus**  
   Imported from restaurant delivery platforms or pre-existing online sources.
 
@@ -90,14 +110,16 @@ We designed an end-to-end onboarding automation toolkit that allowed internal sa
 ---
 
 ## 📈 Key Outcomes
-- ⏱️ **Lead Time Cut by 23 Days** — From 30 to just 7 days for full onboarding.
-- 🔄 **4× Partner Throughput** — Reduced bottlenecks allowed agents to handle 4× more merchants.
-- 🌍 **10× Faster City Launches** — Deployed during COVID to scale across new cities instantly.
+
+- ⏱️ **Lead Time Cut by 23 Days** — From 30 to just 7 days for full onboarding.  
+- 🔄 **4× Partner Throughput** — Reduced bottlenecks allowed agents to handle 4× more merchants.  
+- 🌍 **10× Faster City Launches** — Deployed during COVID to scale across new cities instantly.  
 - ♻️ **Toolkit Reuse** — Adopted across q-commerce and digital verticals in 2024.
 
 ---
 
 ## ⏳ Timeline
+
 - **Build Time**: 10 weeks (core system)  
 - **Deployment**: COVID expansion — launched in multiple cities  
 - **Vertical Expansion**: Used by 2 new business units in 2024
@@ -105,6 +127,7 @@ We designed an end-to-end onboarding automation toolkit that allowed internal sa
 ---
 
 ## 🌍 Impact
+
 - Internal agents could onboard merchants within minutes via mobile or desktop  
 - Digital menus reduced confusion and improved merchant communication  
 - Scaled efficiently without need for massive support team increase
@@ -112,7 +135,9 @@ We designed an end-to-end onboarding automation toolkit that allowed internal sa
 ---
 
 ## 👤 My Role
+
 As Head of Product, I:
+
 - Led product vision, prioritization, and roadmap  
 - Coordinated across designers, backend developers, and sales/support ops  
 - Conducted workflow interviews with sales agents to eliminate friction  
@@ -121,6 +146,7 @@ As Head of Product, I:
 ---
 
 ## 🧠 Lessons Learned
+
 - QR printing delays were a hidden bottleneck — addressed by supporting live generation  
 - Internal tools need simplicity: CLI fallbacks were critical for offline usage  
 - Bi-directional syncs reduce ops pain but require careful conflict resolution
@@ -128,10 +154,5 @@ As Head of Product, I:
 ---
 
 ## 📄 License
-Internal case study — not open-source. For demo or walkthroughs, contact [admin@example.com].
 
----
-
-## 📚 References
-- Feature Spec PDF: Features-Document.pdf  
-- Product Pitch Deck: Product-Slide-Deck.pdf
+Internal case study — not open-source. For demo or walkthroughs, contact [sahand.sorouri@gmail.com].
